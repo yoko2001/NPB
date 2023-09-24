@@ -454,7 +454,7 @@ void write_lu_info(FILE *fp, char class)
   if      (class == 'S') { problem_size = 12;  dt_default = "0.5d0"; itmax = 50; }
   else if (class == 'W') { problem_size = 33;  dt_default = "1.5d-3"; itmax = 300; }
   else if (class == 'A') { problem_size = 64;  dt_default = "2.0d0"; itmax = 250; }
-  else if (class == 'B') { problem_size = 102; dt_default = "2.0d0"; itmax = 250; }
+  else if (class == 'B') { problem_size = 102; dt_default = "2.0d0"; itmax = 200; }
   else if (class == 'C') { problem_size = 162; dt_default = "2.0d0"; itmax = 250; }
   else if (class == 'D') { problem_size = 408; dt_default = "1.0d0"; itmax = 300; }
   else if (class == 'E') { problem_size = 1020; dt_default = "0.5d0"; itmax = 300; }
@@ -495,7 +495,7 @@ void write_mg_info(FILE *fp, char class)
 /*  else if (class == 'W') { problem_size = 64; nit = 40; }*/
   else if (class == 'W') { problem_size = 128; nit = 4; }
   else if (class == 'A') { problem_size = 256; nit = 4; }
-  else if (class == 'B') { problem_size = 256; nit = 20; }
+  else if (class == 'B') { problem_size = 512; nit = 5; }
   else if (class == 'C') { problem_size = 512; nit = 20; }
   else if (class == 'D') { problem_size = 1024; nit = 50; }
   else if (class == 'E') { problem_size = 2048; nit = 50; }

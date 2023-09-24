@@ -1,4 +1,7 @@
 #!/bin/bash
+echo $$ >> /sys/fs/cgroup/cgroup.procs
+sleep 1
+cgdelete -r -g cpuset,cpu,io,memory,hugetlb,pids,rdma,misc:/yuri
 echo $$
 if [ ! -d "/sys/fs/cgroup/yuri/" ];then
 	mkdir /sys/fs/cgroup/yuri
@@ -13,7 +16,7 @@ else
 	echo "cgroup yuri/pagerank_150M already exists"
 fi
 
-echo $((134217728 * 4)) > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo $((4*134217728)) > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"

@@ -16,7 +16,7 @@ else
 	echo "cgroup yuri/pagerank_150M already exists"
 fi
 
-echo 134217728 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo $((134217728*8*2)) > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"

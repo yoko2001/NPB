@@ -1,6 +1,6 @@
-#/bin/bash
+#!/bin/bash
 
-modprobe brd rd_nr=1 rd_size=$((64 * 1024))
+modprobe brd rd_nr=1 rd_size=$((3 * 1024 * 1024))
 swapoff /dev/ram0
 
 #swap on
